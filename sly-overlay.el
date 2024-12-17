@@ -227,5 +227,16 @@ This function also removes itself from `pre-command-hook'."
        (point)))
     (message "%s" result)))
 
+(defun sly-overlay-eval-last-expression ()
+  "Evaluate the last expression at point and overlay the results."
+  (interactive)
+  (let ((result (sly-eval `(slynk:pprint-eval ,(sly-sexp-at-point)))))
+    (sly-overlay--eval-overlay
+     result
+     (save-excursion
+       (end-of-defun)
+       (point)))
+    (message "%s" result)))
+
 (provide 'sly-overlay)
 ;;; sly-overlay.el ends here

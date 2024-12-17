@@ -1,5 +1,17 @@
 #+title: sly-overlay
 
+* Note
+
+This is just a fork of: https://github.com/fosskers/sly-overlay for my personal
+use. The original shows the results of evaluation the previous `defun` rather
+than the value of the previous sexp (which is what I find more useful).
+
+I added a sibling function `sly-overlay-eval-last-expression` which does the
+trick. It's just a quick tweak until I can look deeper and see why there's extra
+code for the defun version.
+
+* Original Readme
+
 This library is an extension for [[https://github.com/joaotavora/sly][Sly]] that enables the overlay of Common Lisp
 evaluation results directly into the buffer in the spirit of [[https://github.com/clojure-emacs/cider][CIDER]] (Clojure) and
 [[https://github.com/xiongtx/eros][Eros]] (Emacs Lisp).
@@ -19,4 +31,3 @@ There is otherwise no other special setup necessary for using the library.
 (package! sly-overlay
   :recipe (:host sourcehut :repo "fosskers/sly-overlay"))
 #+end_src
-
